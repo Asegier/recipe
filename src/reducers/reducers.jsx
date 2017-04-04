@@ -17,11 +17,12 @@ export var recipeShowReducer = (state = [], action) => {
     {
       id: action.id,
       title: action.title,
+      text: action.text
       // image: action.img
     }
     ];
 
-  
+
   default:
 
   }

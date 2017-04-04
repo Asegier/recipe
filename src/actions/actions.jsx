@@ -5,8 +5,9 @@ export var search = (ingredients) => {
   };
 };
 
-export var showAll = () => {
+export var showAll = (recipe) => {
   return {
-    type: 'SHOW_RECIPE'
+    type: 'SHOW_RECIPE',
+    recipe
   };
 };

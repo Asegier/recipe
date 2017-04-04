@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { Search } from './Search'
-// import { getRecipe } from '../api/api';
+import { searchAPI } from '../api/api';
+import { showAll } from '../actions/actions';
 
-//props of objects returned by API
 
 class Recipe extends Component {
   render() {
 
-    let { recipes } = this.props;
-    console.log(this.props);
+    let { dispatch } = this.props;
+    console.log("hi from recipe", this.props);
+
     let renderRecipes = () => {
 
-      // return getRecipe(this.props);
+
+      return searchAPI(this.props.search, function(json){
+        console.log(json);
+        dispatch(showAll(json));
+      })
 
     }
 

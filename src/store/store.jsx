@@ -1,11 +1,12 @@
 import { createStore, compose, combineReducers } from 'redux';
-import { searchReducer } from '../reducers/reducers'
+import { searchReducer } from '../reducers/reducers';
+import { showAll } from '../reducers/reducers';
 
 export let initStore = () => {
 
   const reducer = combineReducers ({
     search: searchReducer,
-    // recipes: recipeShowReducer
+    recipe: showAll
   })
   const store = createStore (reducer, compose(
     window.devToolsExtension ? window.devToolsExtension() : f => f

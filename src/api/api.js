@@ -4,7 +4,8 @@ module.exports = {
           function(ingredient, cb){
 
           const headers = new Headers({
-              "X-Mashape-Key": "XWkI3QrSiwmshqIW6tagnOvwpVdnp1VccZYjsnmytVAkNgFL85",
+              // "X-Mashape-Key": "XWkI3QrSiwmshqIW6tagnOvwpVdnp1VccZYjsnmytVAkNgFL85",
+              "X-Mashape-Key":"myag4vesVomshRjyCEbIzvRB9AvXp1KEaP9jsnXpyENrKtvP2u",
               "Content-Type": "application/json",
               "Accept": "application/json"});
           const url = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${ingredient}&limitLicense=false&number=5&ranking=1`
@@ -18,13 +19,3 @@ module.exports = {
               });
           }
 }
-
-
-// module.exports = {
-//   getRecipe: function(searchInput) {
-//     searchAPI(searchInput,function(json){
-//       console.log(json);
-//
-//     });
-//   }
-// }

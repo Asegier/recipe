@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { search } from '../actions/actions';
-import { searchAPI } from '../api/api';
+// import { searchAPI } from '../api/api';
 
 
 class Search extends Component {
@@ -21,9 +21,9 @@ class Search extends Component {
       this.refs.searchInput.focus();
     }
 
-    searchAPI(searchInput, function(json){
-      console.log(json);
-    })
+    // searchAPI(searchInput, function(json){
+    //   console.log(json);
+    // })
 
 
   }
