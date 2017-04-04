@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { Search } from './Search'
-import { getRecipe } from '../api/api';
+// import { getRecipe } from '../api/api';
 
 //props of objects returned by API
 
@@ -12,7 +12,7 @@ class Recipe extends Component {
     console.log(this.props);
     let renderRecipes = () => {
 
-      return getRecipe(this.props);
+      // return getRecipe(this.props);
 
     }
 

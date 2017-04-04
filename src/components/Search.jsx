@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { search } from '../actions/actions';
+import { searchAPI } from '../api/api';
 
 
 class Search extends Component {
@@ -11,7 +12,7 @@ class Search extends Component {
 
     let {dispatch} = this.props;
     let searchInput = this.refs.searchInput.value;
-    console.log(this.refs.searchInput.value);
+    console.log("hi from search", this.refs.searchInput.value);
 
     if(searchInput.length > 0 ){
       this.refs.searchInput.value = '';
@@ -19,6 +20,11 @@ class Search extends Component {
     } else{
       this.refs.searchInput.focus();
     }
+
+    searchAPI(searchInput, function(json){
+      console.log(json);
+    })
+
 
   }
 
