@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { searchAPI } from '../api/api';
-import { showAll } from '../actions/actions';
+// import { showAll } from '../actions/actions';
 
 
 class Recipe extends Component {
@@ -12,10 +12,9 @@ class Recipe extends Component {
 
     let renderRecipes = () => {
 
-
       return searchAPI(this.props.search, function(json){
         console.log(json);
-        dispatch(showAll(json));
+        // dispatch(showAll(json));
       })
 
     }
