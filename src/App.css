@@ -23,3 +23,14 @@
     to { transform: rotate(360deg); }
 }
 
+.wrapper-icon {
+  position: absolute;
+	right: 0;
+  padding: 5px;
+	top: 0;
+}
+
+.brand-logo {
+  text-align: center;
+  color: white;
+}
