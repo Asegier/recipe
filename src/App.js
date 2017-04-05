@@ -21,17 +21,13 @@ class App extends Component {
         <nav>
           <div  className="nav-wrapper blue-grey darken-2">
             <a href="#" className="brand-logo">FoodBar</a>
-            <div className="chip">
-          <img src="images/jlm.jpeg" alt="Contact Person" />
-          JLM
-            </div>
 
           </div>
 
         </nav>
 
         <div className="wrapper-icon">
-            <i className="medium material-icons">star</i>
+            <i className="small material-icons">star</i>
         </div>
 
 

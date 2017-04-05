@@ -1,30 +1,42 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { searchAPI } from '../api/api';
-// import { showAll } from '../actions/actions';
 
 
 class Recipe extends Component {
+
+
+
   render() {
 
-    let { dispatch } = this.props;
-    console.log("hi from recipe", this.props);
+    let { recipes } = this.props;
+    console.log("this is this.props :", this.props);
+
 
     let renderRecipes = () => {
 
-      return searchAPI(this.props.search, function(json){
-        console.log(json);
-        // dispatch(showAll(json));
+      return recipes.map((recipe) => {
+        {console.log("this is recipe: ", recipe)}
+        {console.log("recipe.id: ", recipe.action.recipes[0])}
+        {console.log("recipe.title: ", recipe.title)}
+          return (
+
+                <div key={recipe.action.recipes.id}>
+                    <h1>{recipe.action.recipes.title} </h1>
+                    <img src={recipe.image}/>
+                </div>
+          )
       })
 
     }
 
+    return (
 
-    return(
       <div>
         {renderRecipes()}
       </div>
+
     )
+
   }
 
 }

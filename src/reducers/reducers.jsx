@@ -10,20 +10,18 @@ export var searchReducer = (state = '', action) => {
 }
 
 export var recipeShowReducer = (state = [], action) => {
+
   switch (action.type) {
   case 'SHOW_RECIPE':
     return [
     ...state,
-    {
-      id: action.id,
-      title: action.title,
-      text: action.text
-      // image: action.img
-    }
+      {
+        action
+      }
     ];
 
-
   default:
+    return state;
 
   }
 
