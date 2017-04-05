@@ -8,21 +8,19 @@ class Recipe extends Component {
 
   render() {
 
-    let { recipes } = this.props;
+    let { foodInstructions } = this.props;
     console.log("this is this.props :", this.props);
 
 
     let renderRecipes = () => {
 
-      return recipes.map((recipe) => {
-        {console.log("this is recipe: ", recipe)}
-        {console.log("recipe.id: ", recipe.action.recipes[0])}
-        {console.log("recipe.title: ", recipe.title)}
+      return foodInstructions.map((recipe) => {
+
           return (
 
-                <div key={recipe.action.recipes.id}>
-                    <h1>{recipe.action.recipes.title} </h1>
-                    <img src={recipe.image}/>
+                <div key={recipe.action.recipes[0].id}>
+                    <h1>{recipe.action.recipes[0].title} </h1>
+                    <img src={recipe.action.recipes[0].image}/>
                 </div>
           )
       })

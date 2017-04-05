@@ -6,7 +6,7 @@ export let initStore = () => {
 
   const reducer = combineReducers ({
     search: searchReducer,
-    recipes: recipeShowReducer
+    foodInstructions: recipeShowReducer
   })
   const store = createStore (reducer, compose(
     window.devToolsExtension ? window.devToolsExtension() : f => f

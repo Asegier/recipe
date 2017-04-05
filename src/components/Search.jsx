@@ -25,7 +25,7 @@ class Search extends Component {
       searchAPI(searchInput, function(recipes){
         console.log("from search comp", recipes);
 
-          return dispatch(showAll(recipes));
+          return dispatch(showAll(JSON.parse(recipes)))
 
 
       })

@@ -1,5 +1,3 @@
-
-
 export var searchReducer = (state = '', action) => {
   switch (action.type) {
   case 'SEARCH_BY_INGREDIENTS':
