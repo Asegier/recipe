@@ -7,13 +7,15 @@ class Recipe extends Component {
 
   handleClick = (e) => {
 
-  console.log("from test api", this.recipe.id.value)
+  console.log("from test api", e.target.id)
 
     // getLink(, function(all){
     // console.log("from test api", e.target)
     //
     // })
   }
+
+
 
   render() {
 
@@ -22,14 +24,13 @@ class Recipe extends Component {
     console.log("this is foodInstructions: ", foodInstructions[0])
 
     let renderRecipes = () => {
-
-      return foodInstructions.map((recipe) => {
+        return foodInstructions.map((recipe) => {
             return (
 
                   <div id={recipe.id}
                   key={recipe.id} onClick={this.handleClick}>
-                      <h1>{recipe.title} </h1>
-                      <img src={recipe.image}/>
+                      <h1 id={recipe.id}>{recipe.title} </h1>
+                      <img id={recipe.id} src={recipe.image}/>
                   </div>
             )
       })
