@@ -15,7 +15,7 @@ class FrontPage extends Component {
 
                         <div className="container">
                             <div className="row">
-                                <div className="col-md-12 col-xs-12">
+                                <div className="col s12">
                                     <Search/>
                                 </div>
                             </div>
@@ -23,12 +23,13 @@ class FrontPage extends Component {
 
                         <div className="container" id="search">
                             <div className="row">
-                                <div className="col-md-12 col-xs-12">
+                                <div className="col s12">
                                     <Recipe/>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
         )

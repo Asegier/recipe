@@ -18,5 +18,19 @@ export var recipeShowReducer = (
     return state;
 
   }
-
 }
+
+export var getURLReducer = (
+  state = {}, action) => {
+
+    switch (action.type) {
+    case 'GRAB_URL':
+      return action.id.sourceUrl;
+
+
+    default:
+      return state;
+
+    }
+
+  }
