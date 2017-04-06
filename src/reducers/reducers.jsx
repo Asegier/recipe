@@ -7,16 +7,12 @@ export var searchReducer = (state = '', action) => {
   }
 }
 
-export var recipeShowReducer = (state = [], action) => {
+export var recipeShowReducer = (
+  state = [], action) => {
 
   switch (action.type) {
   case 'SHOW_RECIPE':
-    return [
-    ...state,
-      {
-        action
-      }
-    ];
+    return action.recipes;
 
   default:
     return state;
@@ -24,3 +20,5 @@ export var recipeShowReducer = (state = [], action) => {
   }
 
 }
+
+// foodInstructions: {action: {recipes}}
