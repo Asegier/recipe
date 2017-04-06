@@ -5,54 +5,57 @@ import { getLink } from '../api/api';
 
 class Recipe extends Component {
 
-  handleClick = (e) => {
+    handleClick = (e) => {
 
 
 
-  }
+    }
 
 
 
-  render() {
+    render() {
 
-    let { foodInstructions } = this.props;
+        let { foodInstructions } = this.props;
 
-    let renderRecipes = () => {
-        return foodInstructions.map((recipe) => {
-            return (
+        let renderRecipes = () => {
+            return foodInstructions.map((recipe) => {
+                return (
 
-              <div className="wrapper-recipe">
+                    <div className="wrapper-recipe">
 
-                  <div id={recipe.id}
-                  key={recipe.id} onClick={this.handleClick}>
-                      <h1 id={recipe.id}>{recipe.title} </h1>
-                      <img id={recipe.id} src={recipe.image}/>
+                        <div id={recipe.id}
+                             key={recipe.id}
+                             onClick={this.handleClick}
 
-                  </div>
-              </div>
-            )
+                        >
+                            <h1 id={recipe.id}>{recipe.title} </h1>
+                            <img id={recipe.id} src={recipe.image}/>
 
-      })
-    };
+                        </div>
+                    </div>
+                )
+
+            })
+        };
 
 
 
 
-    return (
+        return (
 
-      <div>
-        {renderRecipes()}
-      </div>
+            <div>
+                {renderRecipes()}
+            </div>
 
-    )
+        )
 
-  }
+    }
 
 }
 
 
 export default connect(
-  (state) => {
-    return state;
-  }
+    (state) => {
+        return state;
+    }
 )(Recipe);
