@@ -32,6 +32,14 @@ class App extends Component {
 
 
         <div className="wrapper">
+        
+        <div className="container" id="search">
+          <div className="row">
+            <div className="col-md-12 col-xs-12">
+              <Search/>
+            </div>
+          </div>
+        </div>
 
           <div className="container">
             <div className="row">
@@ -41,13 +49,7 @@ class App extends Component {
             </div>
           </div>
 
-          <div className="container" id="search">
-            <div className="row">
-              <div className="col-md-12 col-xs-12">
-                <Search/>
-              </div>
-            </div>
-          </div>
+
         </div>
 
       </div>
