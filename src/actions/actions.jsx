@@ -14,6 +14,13 @@ export var showAll = (recipes) => {
   };
 };
 
+export var idURL = (id) => {
+  return {
+    type: 'GRAB_URL',
+    id
+  }
+}
+
 export var attemptRegister = (params) => {
     return dispatch => {
         console.log('creating user...')
