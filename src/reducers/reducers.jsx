@@ -20,5 +20,3 @@ export var recipeShowReducer = (
   }
 
 }
-
-// foodInstructions: {action: {recipes}}

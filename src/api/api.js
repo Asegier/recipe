@@ -20,9 +20,23 @@ module.exports = {
               });
           },
 
+    getLink:
+          function(id, cb){
 
+          const headers = new Headers({
+              "X-Mashape-Key": "XWkI3QrSiwmshqIW6tagnOvwpVdnp1VccZYjsnmytVAkNgFL85",
+              "Content-Type": "application/json",
+              "Accept": "application/json"});
+          const url = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${id}/information`
+          fetch(url, {headers})
+              .then(function(response){
+                return response.text();
+              })
+              .then(function(json){
+                cb(json);
 
-
+              });
+    }
 
 }
 

@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getLink } from '../api/api';
 
 
 class Recipe extends Component {
 
+  handleClick = (e) => {
 
+  console.log("from test api", this.recipe.id.value)
+
+    // getLink(, function(all){
+    // console.log("from test api", e.target)
+    //
+    // })
+  }
 
   render() {
 
@@ -17,7 +26,8 @@ class Recipe extends Component {
       return foodInstructions.map((recipe) => {
             return (
 
-                  <div key={recipe.id}>
+                  <div id={recipe.id}
+                  key={recipe.id} onClick={this.handleClick}>
                       <h1>{recipe.title} </h1>
                       <img src={recipe.image}/>
                   </div>

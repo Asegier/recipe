@@ -6,7 +6,6 @@ import { searchAPI } from '../api/api';
 
 
 
-
 class Search extends Component {
 
   handleSubmit = (e) => {
@@ -15,7 +14,7 @@ class Search extends Component {
 
     let {dispatch} = this.props;
     let searchInput = this.refs.searchInput.value;
-    console.log("hi from search", this.refs.searchInput.value);
+  
 
     if(searchInput.length > 0 ){
       this.refs.searchInput.value = '';

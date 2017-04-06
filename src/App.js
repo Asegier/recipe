@@ -24,7 +24,7 @@ class App extends Component {
               <div>
                   <nav>
                       <div className="nav-wrapper blue-grey darken-2">
-                          <a href="#" className="brand-logo">FooBar</a>
+                          <a href="#" className="brand-logo">FoodBar</a>
 
                           <ul id="nav-mobile" className="right hide-on-med-and-down">
                               <li><i className="material-icons">star f</i></li>
