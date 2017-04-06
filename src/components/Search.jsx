@@ -14,7 +14,7 @@ class Search extends Component {
 
     let {dispatch} = this.props;
     let searchInput = this.refs.searchInput.value;
-  
+
 
     if(searchInput.length > 0 ){
       this.refs.searchInput.value = '';
@@ -24,7 +24,7 @@ class Search extends Component {
     }
 
       searchAPI(searchInput, function(recipes){
-        console.log("from search comp", recipes);
+        // console.log("from search comp", recipes);
 
           return dispatch(showAll(JSON.parse(recipes)))
 
