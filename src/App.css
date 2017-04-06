@@ -34,3 +34,7 @@
   text-align: center;
   color: white;
 }
+
+.smallLetters {
+    font-size: 10px;
+}

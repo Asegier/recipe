@@ -1,64 +1,58 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
+
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
+import * as actions from './actions/actions';
+
+
+import fire from './fire'
 import './App.css';
-// import Header from './common/header'
-import Recipe from './components/Recipe';
-import Search from './components/Search';
-// import Api from './api/api'
-
-
-//init store
-import { initStore } from './store/store';
-const store = initStore();
 
 
 class App extends Component {
-  render() {
 
-    return(
-      <Provider store={ store }>
-      <div>
-        <nav>
-          <div  className="nav-wrapper blue-grey darken-2">
-            <a href="#" className="brand-logo">FoodBar</a>
+    componentWillMount(){
+        fire.auth().onAuthStateChanged( user => {
 
-          </div>
+            this.props.actions.setLoggedInUser(user);
+        })
+    }
+    render() {
 
-        </nav>
+        return(
+            <div className="App">
+              <div>
+                  <nav>
+                      <div className="nav-wrapper blue-grey darken-2">
+                          <a href="#" className="brand-logo">FooBar</a>
 
-        <div className="wrapper-icon">
-            <i className="small material-icons">star</i>
-        </div>
-
-
-        <div className="wrapper">
-        
-        <div className="container" id="search">
-          <div className="row">
-            <div className="col-md-12 col-xs-12">
-              <Search/>
-            </div>
-          </div>
-        </div>
-
-          <div className="container">
-            <div className="row">
-              <div className="col-md-12 col-xs-12">
-                <Recipe/>
+                          <ul id="nav-mobile" className="right hide-on-med-and-down">
+                              <li><i className="material-icons">star f</i></li>
+                              <li>
+                                  <a href="badges.html">Logout</a>
+                              </li>
+                          </ul>
+                      </div>
+                  </nav>
               </div>
+                {this.props.children}
+              <div className="smallLetters">© Viviane & Chris.  All rights reserved.</div>
             </div>
-          </div>
 
-
-        </div>
-
-      </div>
-
-      </Provider>
-
-    )
-  }
+        )
+    }
 
 }
+function mapStateToProps(state, ownProps){
+    return {
+        user: state.user
+    }
+}
 
-export default App;
+function mapDispatchToProps(dispatch){
+    return {
+        actions: bindActionCreators(actions, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
