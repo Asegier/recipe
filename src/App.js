@@ -19,19 +19,25 @@ class App extends Component {
     }
     render() {
 
+
+
         return(
             <div className="App">
               <div>
                   <nav>
+
+
                       <div className="nav-wrapper blue-grey darken-2">
-                          <a href="#" className="brand-logo center">FoodBar</a>
+
+                          <div className="brand-logo center">FoodBar</div>
                           <ul id="nav-mobile" className="right hide-on-med-and-down">
                               <li><i className="material-icons">star f</i></li>
                               <li>
                                   <a href="badges.html">Logout</a>
                               </li>
                           </ul>
-                      </div>
+
+                    </div>
                   </nav>
               </div>
                 {this.props.children}
