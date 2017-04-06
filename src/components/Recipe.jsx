@@ -23,7 +23,7 @@ class Recipe extends Component {
                   </div>
             )
       })
-    }
+    };
 
 
 
