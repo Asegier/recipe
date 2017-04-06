@@ -9,23 +9,25 @@ class Recipe extends Component {
 
 
 
-
   }
+
+
 
   render() {
 
     let { foodInstructions } = this.props;
 
     let renderRecipes = () => {
-
-      return foodInstructions.map((recipe) => {
+        return foodInstructions.map((recipe) => {
             return (
 
               <div className="wrapper-recipe">
-                  <div key={recipe.id} onClick={this.handleClick}
-                   >
-                      <h1 className="title">{recipe.title} </h1>
-                      <img className="image" src={recipe.image}/>
+
+                  <div id={recipe.id}
+                  key={recipe.id} onClick={this.handleClick}>
+                      <h1 id={recipe.id}>{recipe.title} </h1>
+                      <img id={recipe.id} src={recipe.image}/>
+
                   </div>
               </div>
             )
