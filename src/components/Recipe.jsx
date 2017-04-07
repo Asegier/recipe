@@ -48,7 +48,7 @@ class Recipe extends Component {
 
 
                     <div className="row" key={recipe.id}>
-                        <div className="wrapper-recipe center card">
+                        <div className="card">
 
                             <i className="material-icons right medium"
                                onClick={this.handleFavourite.bind(this, recipe)}
@@ -60,9 +60,6 @@ class Recipe extends Component {
                                 <img className="image" id={recipe.id} src={recipe.image}/>
                             </div>
                         </div>
-
-
-            )
 
                     </div>
                 )
