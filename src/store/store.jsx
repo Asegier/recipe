@@ -2,7 +2,7 @@ import { createStore, compose, combineReducers, applyMiddleware } from 'redux';
 import { searchReducer } from '../reducers/reducers';
 import { recipeShowReducer } from '../reducers/reducers';
 import { getURLReducer } from '../reducers/reducers';
-import { user } from '../reducers/userReducer'
+import user from '../reducers/userReducer'
 import thunkMiddleware from 'redux-thunk'
 import {routerReducer} from 'react-router-redux'
 

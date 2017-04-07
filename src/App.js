@@ -7,6 +7,9 @@ import * as actions from './actions/actions';
 
 import fire from './fire'
 import './App.css';
+import { browserHistory } from 'react-router'
+
+import { Link } from 'react-router'
 
 
 class App extends Component {
@@ -15,10 +18,30 @@ class App extends Component {
         fire.auth().onAuthStateChanged( user => {
 
             this.props.actions.setLoggedInUser(user);
+
+            if (!user){
+                browserHistory.push(`/login`)
+            }
         })
     }
-    render() {
 
+    handleLogout = (e) => {
+        e.preventDefault();
+        fire.auth().signOut().then( () => {
+            console.log('user logged out ');
+            browserHistory.push(`/LoggedOut`)
+        }).catch( err => {
+            console.log("error: ", err);
+            //
+        })
+    };
+
+    handleDisplayFavourites = () => {
+        browserHistory.push(`/Favourites`)
+    }
+
+
+    render() {
 
 
         return(
@@ -28,12 +51,21 @@ class App extends Component {
 
 
                       <div className="nav-wrapper blue-grey darken-2">
-
-                          <div className="brand-logo center">FoodBar</div>
-                          <ul id="nav-mobile" className="right hide-on-med-and-down">
-                              <li><i className="material-icons">star f</i></li>
+                          <div className="left">{ this.props.user ? this.props.user.email : 'Guest' }</div>
+                          <Link to="/"><
+                              img className="center nav-wrapper" id="foodbar" src="/images/foodbar2.png"/>
+                          </Link>
+                          {/*<div className="brand-logo center">FoodBar</div>*/}
+                          <ul id="nav-mobile" className="nav-mobile right hide-on-med-and-down">
+                              <li><i
+                                  className="material-icons"
+                                  onClick={this.handleDisplayFavourites}
+                              >star f</i></li>
                               <li>
-                                  <a href="badges.html">Logout</a>
+                                  <a
+                                      href="badges.html"
+                                      onClick={this.handleLogout.bind(this)}
+                                  >Logout</a>
                               </li>
                           </ul>
 
