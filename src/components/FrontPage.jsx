@@ -25,13 +25,9 @@ class FrontPage extends Component {
                 <div className="row container">
                   <div className="row">
                     <div className="col s12">
-                    <Parallax>
-
-                      <Background>
-                        <img src="images/maya.jpg"/>
-                      </Background>
+      
                       <Recipe/>
-                    </Parallax>   
+
                     </div>
                   </div>
                 </div>
