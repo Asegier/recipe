@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Parallax, Background } from 'react-parallax';
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
@@ -72,8 +73,23 @@ class App extends Component {
                     </div>
                   </nav>
               </div>
-                {this.props.children}
-              <div className="smallLetters">© Viviane & Chris.  All rights reserved.</div>
+
+              <div>
+
+                          <Parallax>
+
+                            <Background>
+                              <img src="images/maya.jpg"/>
+                    		    </Background>
+                               {this.props.children}
+                        </Parallax>
+
+               </div>
+
+               <div className="wrapper-footer">
+                 <div className="smallLetters">© Viviane & Chris.  All rights reserved.</div>
+               </div>
+
             </div>
 
         )
