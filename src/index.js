@@ -2,19 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
-
-
 // import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-
 import { Router, browserHistory, IndexRoute, Route } from 'react-router'
-
 import { syncHistoryWithStore } from 'react-router-redux';
-
-
 import CreateUser from './components/CreateUser'
 import Login from './components/Login'
 import FrontPage from './components/FrontPage'
+import Favourites from './components/Favourites'
 
 // import Header from './common/header'
 //import Recipe from './components/Recipe';
@@ -35,6 +30,7 @@ ReactDOM.render(
                 <IndexRoute component={FrontPage} />
                 <Route path="/Create" component={CreateUser} />
                 <Route path="/Login" component={Login} />
+                <Route path="/Favourites" component={Favourites} />
             </Route>
         </Router>
 

@@ -5,29 +5,30 @@ import { idURL } from '../actions/actions';
 
 class Recipe extends Component {
 
-  handleClick = (e) => {
+    handleClick = (e) => {
 
-    let {dispatch} = this.props;
+        let {dispatch} = this.props;
 
-    var id = e.target.id;
-    console.log("id from recipe:", id)
+        var id = e.target.id;
+        console.log("id from recipe:", id);
 
-    getLink(e.target.id, function(all){
-      dispatch(idURL(JSON.parse(all)))
-    })
+        getLink(e.target.id, function(all){
+            dispatch(idURL(JSON.parse(all)))
+        })
 
-    window.open(this.props.allInfo);
+        window.open(this.props.allInfo);
 
-  }
+    }
 
 
-  render() {
+    render() {
 
-    let { foodInstructions } = this.props;
+        let { foodInstructions } = this.props;
 
-    let renderRecipes = () => {
-        return foodInstructions.map((recipe) => {
-            return (
+        let renderRecipes = () => {
+            return foodInstructions.map((recipe) => {
+                return (
+
 
               <div className="row">
                 <div className="card"> 
@@ -46,24 +47,27 @@ class Recipe extends Component {
 
             )
 
-      })
-    };
+                    </div>
+                )
 
-    return (
+            })
+        };
 
-      <div>
-        {renderRecipes()}
-      </div>
+        return (
 
-    )
+            <div>
+                {renderRecipes()}
+            </div>
 
-  }
+        )
+
+    }
 
 }
 
 
 export default connect(
-  (state) => {
-    return state;
-  }
+    (state) => {
+        return state;
+    }
 )(Recipe);

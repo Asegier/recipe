@@ -28,8 +28,8 @@ class App extends Component {
 
 
                       <div className="nav-wrapper blue-grey darken-2">
-                          <div className="brand-logo center">FoodBar</div>
 
+                          <div className="brand-logo center">FoodBar</div>
                           <ul id="nav-mobile" className="right hide-on-med-and-down">
                               <li><i className="material-icons">star f</i></li>
                               <li>
