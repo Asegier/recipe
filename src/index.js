@@ -10,6 +10,7 @@ import CreateUser from './components/CreateUser'
 import Login from './components/Login'
 import FrontPage from './components/FrontPage'
 import Favourites from './components/Favourites'
+import LoggedOut from './components/LoggedOut'
 
 // import Header from './common/header'
 //import Recipe from './components/Recipe';
@@ -31,6 +32,7 @@ ReactDOM.render(
                 <Route path="/Create" component={CreateUser} />
                 <Route path="/Login" component={Login} />
                 <Route path="/Favourites" component={Favourites} />
+                <Route path="/LoggedOut" component={LoggedOut} />
             </Route>
         </Router>
 

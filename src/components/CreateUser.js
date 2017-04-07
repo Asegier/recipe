@@ -19,7 +19,7 @@ class CreateUser extends Component {
         return(
 
             <div className="row">
-                <h1>You are currently logged in as { this.props.user? this.props.user.email : '--'}</h1>
+                <h3>Create Your New Account!</h3>
                 <form className="col s12" onSubmit={this.handleSubmit.bind(this)}>
                     <div className="row">
                         <div className="input-field col s12">

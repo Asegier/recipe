@@ -2,15 +2,28 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/actions';
+import fire from '../fire'
+import { browserHistory } from 'react-router';
+import {Link} from 'react-router'
+
 
 class Login extends Component {
 
     handleSubmit(e){
         e.preventDefault();
         console.log('handle submit');
-        this.props.actions.attemptLogin({
+        /*this.props.actions.attemptLogin({
             email: this.emailEl.value,
             password:  this.passwordEl.value,
+        })*/
+
+        fire.auth().signInWithEmailAndPassword(this.emailEl.value, this.passwordEl.value).then( user => {
+            console.log('user logged in: ', user.email);
+            browserHistory.push(`/`)
+        }).catch( err => {
+            console.log("error: ", err);
+            alert(err)
+            //
         })
     }
 
@@ -19,7 +32,7 @@ class Login extends Component {
         return(
 
             <div className="row">
-                <h1>You are currently logged in as { this.props.user? this.props.user.email : '--'}</h1>
+                <h1>Please Login</h1>
                 <form className="col s12" onSubmit={this.handleSubmit.bind(this)}>
                     <div className="row">
                         <div className="input-field col s12">
@@ -33,7 +46,7 @@ class Login extends Component {
                     </div>
                     <input type="submit" className="waves-effect waves-light btn" value="Submit" />
                 </form>
-
+                <Link to="/Create">Create New Account </Link>
             </div>
 
 

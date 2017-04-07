@@ -28,12 +28,12 @@ module.exports = {
               "Content-Type": "application/json",
               "Accept": "application/json"});
           const url = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${id}/information`
-          fetch(url, {headers})
+          return fetch(url, {headers})
               .then(function(response){
-                return response.text();
+                return response.json();
               })
-              .then(function(json){
-                cb(json);
+              .then(function(j){
+                cb(j); //< - javascript object
 
               });
     }

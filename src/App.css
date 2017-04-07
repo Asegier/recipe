@@ -68,3 +68,8 @@
   background-size: cover;
 
 }
+
+#foodbar {
+    position: relative;
+    left: 4%;
+}

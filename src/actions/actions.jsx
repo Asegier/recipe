@@ -26,7 +26,6 @@ export var attemptRegister = (params) => {
         console.log('creating user...')
         fire.auth().createUserWithEmailAndPassword(params.email, params.password).then( user => {
             console.log('user created:', user.email);
-
             // firebase.auth().signInWithEmailAndPassword(email, password)
 
         }).catch( err => {
@@ -39,6 +38,20 @@ export var attemptLogin = (params) => {
     return dispatch => {
         fire.auth().signInWithEmailAndPassword(params.email, params.password).then( user => {
             console.log('user logged in: ', user.email);
+            dispatch({type:'LOGIN_SUCCESFUL'})
+        }).catch( err => {
+            console.log("error: ", err)
+            //
+        })
+    }
+
+
+}
+
+export var Logout = (params) => {
+    return dispatch => {
+        fire.auth().signOut().then( () => {
+            console.log('user logged out ');
         }).catch( err => {
             console.log("error: ", err)
             //
