@@ -36,7 +36,7 @@ class Search extends Component {
   render() {
     return(
       <form onSubmit={this.handleSubmit}>
-          <input ref="searchInput" className="form-control input-lg" type="text" placeholder="What's in your fridge?" />
+          <input ref="searchInput" className="searchBar" className="form-control input-lg" type="text" placeholder="What's in your fridge?" />
           <button type="submit" className="btn btn-primary btn-lg btn-block">Go!</button>
       </form>
 

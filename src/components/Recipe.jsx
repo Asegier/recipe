@@ -30,16 +30,22 @@ class Recipe extends Component {
                 return (
 
 
-                    <div className="row">
-                        <div className="wrapper-recipe center " className="card">
+              <div className="row">
+                <div className="card"> 
 
-                            <i className="material-icons right medium">star</i>
-                            <div id={recipe.id}
-                                 key={recipe.id} onClick={this.handleClick} >
-                                <h1 className="title" id={recipe.id}>{recipe.title} </h1>
-                                <img className="image" id={recipe.id} src={recipe.image}/>
-                            </div>
-                        </div>
+                    <i className="material-icons right medium">star</i>
+                      <div id={recipe.id}
+                      key={recipe.id} onClick={this.handleClick} >
+                          <h1 className="title" id={recipe.id}>{recipe.title} </h1>
+
+                          <img className="image" id={recipe.id}
+                         src={recipe.image}/>
+                         </div>
+                      </div>
+                  </div>
+
+
+            )
 
                     </div>
                 )
